@@ -1,15 +1,13 @@
-// Superhero 3.2.0
+// Darkly 3.2.0
 // Bootswatch
 // -----------------------------------------------------
 
-@import url("//fonts.googleapis.com/css?family=Lato:300,400,700");
+@import url("//fonts.googleapis.com/css?family=Lato:400,700,400italic");
 
 // Navbar =====================================================================
 
 .navbar {
-  .box-shadow(none);
-  border: none;
-  font-size: 12px;
+  border-width: 0;
 
   &-default {
 
@@ -26,35 +24,37 @@
       color: @navbar-inverse-bg;
     }
   }
+
+  &-brand {
+    padding: 18.5px 15px 20.5px;
+  }
+
+  &-form {
+    .form-control {
+      background-color: white;
+
+      &:focus {
+        border-color: white;
+      }
+    }
+  }
 }
 
 // Buttons ====================================================================
 
-.btn {
+.btn:active {
+  .box-shadow(none);
+}
 
-  font-weight: 300;
-
-  &-default {
-    &:hover {
-      background-color: darken(@btn-default-bg, 3%);
-    }
-  }
-
-  &-sm,
-  &-xs {
-    font-size: 12px;
-  }
+.btn-group.open .dropdown-toggle {
+  .box-shadow(none);
 }
 
 // Typography =================================================================
 
-body {
-  font-weight: 300;
-}
-
 .text-primary,
 .text-primary:hover {
-  color: @brand-primary;
+  color: lighten(@brand-primary, 10%);
 }
 
 .text-success,
@@ -77,43 +77,24 @@ body {
   color: @brand-info;
 }
 
-.page-header {
-  border-bottom-color: @table-border-color;
-}
-
-.dropdown-menu {
-
-  border: none;
-  margin: 0;
-  .box-shadow(none);
-
-  > li > a {
-    font-size: 12px;
-    font-weight: 300;
-  }
-}
-
-.btn-group.open .dropdown-toggle {
-  .box-shadow(none);
-}
-
-.dropdown-header {
-  font-size: 12px;
-}
-
 // Tables =====================================================================
 
 table,
 .table {
-  font-size: 12px;
 
   a:not(.btn) {
-    color: #fff;
     text-decoration: underline;
   }
 
-  .text-muted {
-    color: @text-muted;
+  .success,
+  .warning,
+  .danger,
+  .info {
+    color: #fff;
+
+    a {
+      color: #fff;
+    }
   }
 
   > thead > tr > th,
@@ -122,9 +103,18 @@ table,
   > thead > tr > td,
   > tbody > tr > td,
   > tfoot > tr > td {
-    border-color: transparent;
+    border: none;
   }
- }
+
+  &-bordered > thead > tr > th,
+  &-bordered > tbody > tr > th,
+  &-bordered > tfoot > tr > th,
+  &-bordered > thead > tr > td,
+  &-bordered > tbody > tr > td,
+  &-bordered > tfoot > tr > td {
+    border: 1px solid @table-border-color;
+  }
+}
 
 // Forms ======================================================================
 
@@ -133,65 +123,82 @@ textarea {
   color: @input-color;
 }
 
-label,
-.radio label,
-.checkbox label,
-.help-block {
-  font-size: 12px;
-  font-weight: 300;
-}
+.form-control,
+input,
+textarea {
+  border: none;
+  .box-shadow(none);
 
-.input-addon,
-.input-group-addon {
-  color: @text-color;
+  &:focus {
+    .box-shadow(none);
+  }
 }
 
 .has-warning {
   .help-block,
   .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
   .form-control-feedback {
     color: @brand-warning;
   }
 
+  .form-control,
+  .form-control:focus {
+    .box-shadow(none);
+  }
+
   .input-group-addon {
-    border: none;
+    border-color: @brand-warning;
   }
 }
 
 .has-error {
   .help-block,
   .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
   .form-control-feedback {
     color: @brand-danger;
   }
 
+  .form-control,
+  .form-control:focus {
+    .box-shadow(none);
+  }
+
   .input-group-addon {
-    border: none;
+    border-color: @brand-danger;
   }
 }
 
 .has-success {
   .help-block,
   .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
   .form-control-feedback {
     color: @brand-success;
   }
 
-  .input-group-addon {
-    border: none;
-  }
-}
-
-.form-control:focus {
-  .box-shadow(none);
-}
-
-.has-warning,
-.has-error,
-.has-success {
+  .form-control,
   .form-control:focus {
     .box-shadow(none);
   }
+
+  .input-group-addon {
+    border-color: @brand-success;
+  }
+}
+
+.input-group-addon {
+  color: @text-color;
 }
 
 // Navs =======================================================================
@@ -200,44 +207,40 @@ label,
   .open > a,
   .open > a:hover,
   .open > a:focus {
-    border-color: transparent;
+    border-color: @nav-tabs-border-color;
   }
 }
 
-.nav-tabs {
-  > li > a {
-    color: @text-color;
-  }
-}
-
-.nav-pills {
-  > li > a {
-    color: @text-color;
-  }
+.nav-tabs > li > a,
+.nav-pills > li > a {
+  color: #fff;
 }
 
 .pager {
-  a {
-    color: @text-color;
+  a,
+  a:hover {
+    color: #fff;
   }
+
+  .disabled {
+    &>a,
+    &>a:hover,
+    &>a:focus,
+    &>span {
+      background-color: @pagination-disabled-bg;
+    }
+  }
+}
+
+.breadcrumb a {
+  color: #fff;
 }
 
 // Indicators =================================================================
 
-.label {
-  font-weight: 300;
-}
-
-.alert {
-  color: #fff;
-
-  a,
-  .alert-link {
-    color: #fff;
-  }
-}
-
 .close {
+  text-decoration: none;
+  text-shadow: none;
   opacity: 0.4;
 
   &:hover,
@@ -246,7 +249,23 @@ label,
   }
 }
 
+.alert {
+  .alert-link {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
 // Progress bars ==============================================================
+
+.progress {
+  height: 10px;
+  .box-shadow(none);
+  .progress-bar {
+    font-size: 10px;
+    line-height: 10px;
+  }
+}
 
 // Containers =================================================================
 
@@ -254,33 +273,10 @@ label,
   .box-shadow(none);
 }
 
-.panel {
-  border: none;
-
-  &-default > .panel-heading {
-    background-color: @table-bg-hover;
-    color: @text-color;
-  }
-}
-
-.thumbnail {
-  background-color: @well-bg;
-  border: none;
-}
-
-.modal {
-  padding: 0;
-
-  &-header,
-  &-footer {
-    background-color: @table-bg-hover;
-    border: none;
-    border-radius: 0;
-  }
-}
-
 .popover {
-  &-title {
-    border: none;
-  }
+  color: @text-color;
+}
+
+.panel-default > .panel-heading {
+  background-color: @panel-footer-bg;
 }
