@@ -1,2 +1,2 @@
-lessc _style\style.less style.css
-jade _jade --out .
+call jade _jade --out .
+call lessc _style\style.less style.css
