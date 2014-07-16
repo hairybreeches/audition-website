@@ -4,24 +4,18 @@ include ../components/template
 	div.jumbotron
 		div.container
 			h1 Try it out
-			.row
-				div(class="col-lg-4")
-					.well
-						p We're currently working hard to make an early version of our software available to a few select users. We'd really like it if you were one of them. 
-						p Enter your email using the box opposite and we'll be in touch.
-				div(class="col-lg-5 col-lg-offset-1")
-					.well
-						form.form-horizontal(action="//auditionsoftware.us8.list-manage.com/subscribe/post?u=cbc366668e12fea772df67aeb&amp;id=bf820d2720", method="post", name="mc-embedded-subscribe-form", target="_blank", novalidate)
-							fieldset
-								.form-group
-									label(for="mce-EMAIL" class="col-lg-2 control-label") Email
-									.col-lg-10
-										input.form-control(type="email", value="", name="EMAIL", class="email", id="mce-EMAIL", placeholder="email address", required)
-									<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-									div(style="position: absolute; left: -5000px;")
-										input(type="text" name="b_cbc366668e12fea772df67aeb_bf820d2720" tabindex="-1" value="")
-								.form-group
-									div(class="col-lg-10 col-lg-offset-2")
-										button(type="submit" class="btn btn-primary") Sign me up &raquo;
+			p We're currently working hard to make an early version of our software available to a few select users. We'd really like it if you were one of them. 
+			p Enter your email using the box below and we'll be in touch.
+			form.form-horizontal(action="//auditionsoftware.us8.list-manage.com/subscribe/post?u=cbc366668e12fea772df67aeb&amp;id=bf820d2720", method="post", name="mc-embedded-subscribe-form", target="_blank", novalidate)
+				fieldset
+					.form-group
+						label(for="mce-EMAIL" class="col-lg-2 control-label") Email	
+						.col-lg-6
+							input.form-control(type="email", value="", name="EMAIL", id="mce-EMAIL", placeholder="email address", required)
+						<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+						div(style="position: absolute; left: -5000px;")
+							input(type="text" name="b_cbc366668e12fea772df67aeb_bf820d2720" tabindex="-1" value="")
+						.col-lg-4
+							button(type="submit" class="btn btn-primary") Sign me up &raquo;
 			
 				
