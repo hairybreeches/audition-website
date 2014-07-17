@@ -2,7 +2,7 @@ Welcome!
 
 This site built by Dave Conlin (dave[at]auditionsoftware.com) using a bunch of components and tools:
 
-The Darkly theme by Thomas Park. http://bootswatch.com/darkly/
+The Darkly theme, by Thomas Park. http://bootswatch.com/darkly/
 
 Flatstrap, by Little Spark. http://flatstrap.org/
 
