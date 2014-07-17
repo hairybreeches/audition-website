@@ -1,12 +1,13 @@
-mixin page()
-  html
-    include head
-    body
-      include navbar
-    
-      block
-   
-      include footer  
-    
-      include scripts
+mixin page(title)
+	html
+		include head
+		+head(title)
+		body
+			include navbar
+
+			block
+
+			include footer  
+
+			include scripts
 
