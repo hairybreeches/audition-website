@@ -1,4 +1,6 @@
 include ../components/template
+mixin submitbutton()
+	button(type="submit" class="btn btn-primary") Sign me up &raquo;
 
 +page('Sign up')
 	div.jumbotron
@@ -16,8 +18,8 @@ include ../components/template
 						div(style="position: absolute; left: -5000px;")
 							input(type="text" name="b_cbc366668e12fea772df67aeb_bf820d2720" tabindex="-1" value="")
 						div(class="hidden-xs col-sm-4")
-							button(type="submit" class="btn btn-primary") Sign me up &raquo;
+							+submitbutton()
 					div.form-group(class="visible-xs col-xs-12")
-							button(type="submit" class="btn btn-primary") Sign me up &raquo;
+							+submitbutton()
 			
 				
