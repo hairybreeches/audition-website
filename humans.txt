@@ -1,0 +1,15 @@
+Welcome!
+
+This site built by Dave Conlin (dave[at]auditionsoftware.com) using a bunch of components and tools:
+
+The Darkly theme by Thomas Park. http://bootswatch.com/darkly/
+
+Flatstrap, by Little Spark. http://flatstrap.org/
+
+Twitter Bootstrap. http://getbootstrap.com
+
+Jade. http://jade-lang.com/
+
+Less. http://lesscss.org/
+
+JQuery, obviously. http://jquery.com/
