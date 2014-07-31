@@ -5925,5 +5925,8 @@ body {
   margin-top: 15px;
 }
 .brand-logo {
-  height: 30px;
+  height: 40px;
+}
+.navbar-brand {
+  padding: 10px 15px;
 }
