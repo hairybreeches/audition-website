@@ -5924,9 +5924,20 @@ body {
 .vertical-space {
   margin-top: 15px;
 }
+hr.spacer {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
 .brand-logo {
   height: 40px;
 }
 .navbar-brand {
   padding: 10px 15px;
+}
+.screenshot {
+  border-radius: 20px;
+  max-width: 100%;
+}
+.screenshot-caption {
+  font-size: 23px;
 }

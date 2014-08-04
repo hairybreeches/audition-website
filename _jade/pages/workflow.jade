@@ -1,0 +1,36 @@
+include ../components/template
+
+mixin screenshot(src)
+	.col-sm-8
+		img.screenshot(src=src)
+				
++page('Workflow')
+	.jumbotron
+		.container
+			h1 How does it work?			
+			p Audition is designed for an auditor's workflow, so at every stage
+
+	.container
+		h2 1: Import journals straight from the accounts
+		.row.vertical-space
+			.col-sm-4
+				p.screenshot-caption Tired of tools that take longer to use than doing the task by hand? So are we. Our tool allows you to import your client's data directly from their accounts package so you can get the job done quickly and easily.
+			+screenshot('login.jpg')
+				
+		hr.spacer
+		
+		h2 2: Analyse data quickly and thoroughly
+		.row.vertical-space
+			+screenshot('search.jpg')
+			.col-sm-4
+				p.screenshot-caption No spreadsheet formulae, no scanning huge lists of journals looking for ones that stand out. A simple interface which helps you understand exactly what you're looking at.
+		
+		hr.spacer
+		
+		h2 3: Export to Excel spreadsheet or PDF file
+		.row.vertical-space
+			.col-sm-4
+				p.screenshot-caption Next, you want to include the results in your working papers? No problem. Simply export the data to a spreadsheet or read-only .pdf file so you can cross reference it with the rest of your workings
+			+screenshot('export.jpg')
+		
+		
