@@ -4,7 +4,7 @@ mixin screenshot(src)
 	.col-sm-8
 		img.screenshot(src=src)
 				
-+page('Workflow')
++page('Product')
 	.jumbotron
 		.container
 			h1 How does it work?			
@@ -14,7 +14,7 @@ mixin screenshot(src)
 		h2 1: Import journals straight from the accounts
 		.row.vertical-space
 			.col-sm-4
-				p.screenshot-caption Tired of tools that take longer to use than doing the task by hand? So are we. Our tool allows you to import your client's data directly from their accounts package so you can get the job done quickly and easily.
+				p.screenshot-caption Lining up all the columns in a spreadsheet and importing them can be time-consuming and frustrating. So just connect to the accounts system directly and let the tool do the work.
 			+screenshot('login.jpg')
 				
 		hr.spacer
@@ -23,7 +23,7 @@ mixin screenshot(src)
 		.row.vertical-space
 			+screenshot('search.jpg')
 			.col-sm-4
-				p.screenshot-caption No spreadsheet formulae, no scanning huge lists of journals looking for ones that stand out. A simple interface which helps you understand exactly what you're looking at.
+				p.screenshot-caption No spreadsheet formulae, no scanning huge lists of journals looking for ones that stand out. A simple interface which helps you understand exactly what you're looking at, and allows you to document exactly what tests you have performed.
 		
 		hr.spacer
 		
@@ -32,5 +32,13 @@ mixin screenshot(src)
 			.col-sm-4
 				p.screenshot-caption Want to include the results in your working papers? No problem. Simply export the data to a spreadsheet or read-only .pdf file so you can cross reference it with the rest of your workings
 			+screenshot('export.jpg')
+			
+		hr.spacer
+		
+	
+		h1 Enough already! Let me try it out!			
+		p
+			a.btn.btn-primary.btn-lg(role="button", href="signup") Try it now &raquo;
+		
 		
 		
