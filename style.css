@@ -5921,6 +5921,9 @@ body {
   padding-bottom: 20px;
   padding-top: 50px;
 }
+html {
+  overflow-y: scroll;
+}
 .vertical-space {
   margin-top: 30px;
 }
