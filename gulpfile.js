@@ -13,13 +13,13 @@ var args   = yargs.argv;
 var targetDir = args.target || './';
 
 gulp.task('templates', function() {
-  return gulp.src('./_jade/pages/*.jade')
+  return gulp.src('./templates/pages/*.jade')
       .pipe(jade({ pretty: true }))
       .pipe(gulp.dest(targetDir));
 });
 
 gulp.task('less', function () {
-  gulp.src('./_style/style.less')
+  gulp.src('./style/style.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
