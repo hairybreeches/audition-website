@@ -14,7 +14,7 @@ var targetDir = args.target || './';
 
 gulp.task('templates', function() {
   return gulp.src('./_jade/pages/*.jade')
-      .pipe(jade())
+      .pipe(jade({ pretty: true }))
       .pipe(gulp.dest(targetDir));
 });
 
