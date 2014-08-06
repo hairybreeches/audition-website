@@ -1,0 +1,18 @@
+{
+  "name": "audition-website",
+  "version": "1.0.0",
+  "description": "The website for Audition Software Limited",
+  "author": "Audition Software Ltd",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hairybreeches/hairybreeches.github.io.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.6",
+    "gulp-jade": "^0.7.0",
+    "gulp-less": "^1.3.3",
+    "gulp-util": "^3.0.0",
+    "path": "^0.4.9",
+    "yargs": "^1.3.1"
+  }
+}
