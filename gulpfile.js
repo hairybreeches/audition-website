@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 		
 var args   = yargs.argv;
 
-var targetDir = args.target || './';
+var targetDir = args.target || '../build';
 
 gulp.task('templates', function() {
   return gulp.src('./templates/pages/*.jade')
