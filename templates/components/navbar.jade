@@ -9,21 +9,4 @@
 				img.brand-logo(src="sitelogo.svg")
 		.navbar-collapse.collapse.navbar-inverse-collapse#navbar-main
 			ul.nav.navbar-nav
-				li
-					a(href="/") Home
-				li.dropdown
-					a.dropdown-toggle(data-toggle="dropdown" href="#") Methodology
-						b.caret
-					ul.dropdown-menu
-						li
-							a(href="methodology-importance") Introduction
-						li
-							a(href="methodology-isa") ISA requirements
-						li
-							a(href="methodology-recommendations") FRC recommendations							
-						li
-							a(href="methodology-solution") How Audition helps
-				li
-					a(href="/product") Product
-				li
-					a(href="/signup") Try now
+				+main-menu()

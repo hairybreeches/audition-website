@@ -1,3 +1,4 @@
+include menus
 mixin page(title)
 	doctype html
 	html(lang="en")
@@ -11,15 +12,6 @@ mixin page(title)
 			include footer  
 
 			include scripts
-
-mixin methodology-menu(selected)
-	for page in [{name: 'Introduction', link:'methodology-importance', id: 'introduction'}, {name: 'ISA requirements', link:'methodology-isa', id: 'isa'},{name: 'FRC recommendations', link:'methodology-recommendations', id: 'frc'},{name: 'How Audition helps', link:'methodology-solution', id: 'solution'}]
-		if(selected === page.id)
-			li.active			
-				a(href=page.link) #{page.name}
-		else
-			li
-				a(href=page.link) #{page.name}
 
 mixin methodology-page(title, id)
 	+page(title)
