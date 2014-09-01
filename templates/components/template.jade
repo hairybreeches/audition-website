@@ -13,7 +13,7 @@ mixin page(title)
 			include scripts
 
 mixin methodology-menu(selected)
-	for page in [{name: 'Introduction', link:'methodology-importance', id: 'introduction'}, {name: 'ISA requirements', link:'methodology-isa', id: 'isa'},{name: 'How Audition helps', link:'methodology-solution', id: 'solution'},{name: 'FRC recommendations', link:'methodology-recommendations', id: 'frc'}]
+	for page in [{name: 'Introduction', link:'methodology-importance', id: 'introduction'}, {name: 'ISA requirements', link:'methodology-isa', id: 'isa'},{name: 'FRC recommendations', link:'methodology-recommendations', id: 'frc'},{name: 'How Audition helps', link:'methodology-solution', id: 'solution'}]
 		if(selected === page.id)
 			li.active			
 				a(href=page.link) #{page.name}
