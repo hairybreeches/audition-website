@@ -1,11 +1,11 @@
 include ../components/template
 
-mixin column(title, content)
+mixin column(title, link, content)
 	.col-md-4
 		h2= title 
 		p= content 
 		p
-			a(class="btn btn-default", href="product", role="button") Learn more &raquo;
+			a(class="btn btn-default", href=link, role="button") Learn more &raquo;
 
 
 +page('Home')
@@ -17,8 +17,8 @@ mixin column(title, content)
 				a.btn.btn-primary.btn-lg(role="button", href="signup") Try it now &raquo;
 	.container
 		.row
-			+column('Improve recovery rates', 'You want to be able to give your clients the best deal possible. Save time at the planning and execution stage of the audit and perform an ISA-compliant audit faster, allowing you to save your clients money.')
+			+column('Improve recovery rates', 'product', 'You want to be able to give your clients the best deal possible. Save time at the planning and execution stage of the audit and perform an ISA-compliant audit faster, allowing you to save your clients money.')
 			
-			+column('Increase ISA compliance', 'ISA 240, the auditor\'s responsibilities relating to fraud, requires the auditor to "Test the appropriateness of journal entries recorded in the general ledger". Many auditors find compliance with this standard difficult and burdensome. We can help.')
+			+column('Increase ISA compliance', 'methodology-solution', 'ISA 240, the auditor\'s responsibilities relating to fraud, requires the auditor to "Test the appropriateness of journal entries recorded in the general ledger". Many auditors find compliance with this standard difficult and burdensome. We can help.')
 			
-			+column('Import journals easily', 'Tired of tools that take longer to use than doing the task by hand? So are we. Our tool allows you to import your client\'s data directly, so you can get the job done quickly and easily.')
+			+column('Import journals easily', 'product', 'Tired of tools that take longer to use than doing the task by hand? So are we. Our tool allows you to import your client\'s data directly, so you can get the job done quickly and easily.')
