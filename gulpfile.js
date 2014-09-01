@@ -31,5 +31,11 @@ gulp.task('content', function () {
       .pipe(gulp.dest(targetDir));
 });
 
+gulp.task('watch', function () {
+  gulp.watch('./style/**/*.less', ['less']);  
+  gulp.watch('./templates/**/*.jade', ['templates']);
+  gulp.watch('content/*', ['content']);
+});
+
 // Default Task
-gulp.task('default', ['templates', 'less', 'content']);
+gulp.task('default', ['templates', 'less', 'content', 'watch']);
