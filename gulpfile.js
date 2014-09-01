@@ -5,7 +5,9 @@ var gulp = require('gulp'),
     jade = require('gulp-jade'),
     less = require('gulp-less'),
     path = require('path'),
-		yargs = require('yargs');
+		yargs = require('yargs'),
+		express = require('express'),		
+		app = express();	
 		
 		
 var args   = yargs.argv;
@@ -37,5 +39,25 @@ gulp.task('watch', function () {
   gulp.watch('content/*', ['content']);
 });
 
+gulp.task('serve', function() {
+	var servePath = path.resolve(targetDir);
+	//serve index.html on the root
+	app.get('/', function(req,res) {
+		res.sendFile(servePath + '/index.html');		
+	});
+	
+	//very dirty way to make sure we serve .html files on their route
+	app.use(function(req, res, next) {
+		if (req.path.indexOf('.') === -1) {			
+      req.url += '.html';	
+    }    
+    next();
+	});
+	
+  app.use(express.static(servePath));
+	gutil.log('serving directory: ' + servePath);	
+  app.listen(1337);
+});
+
 // Default Task
-gulp.task('default', ['templates', 'less', 'content', 'watch']);
+gulp.task('default', ['templates', 'less', 'content', 'serve', 'watch']);

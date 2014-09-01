@@ -8,6 +8,7 @@
     "url": "https://github.com/hairybreeches/hairybreeches.github.io.git"
   },
   "devDependencies": {
+    "express": "^4.8.7",
     "gulp": "^3.8.6",
     "gulp-jade": "^0.7.0",
     "gulp-less": "^1.3.3",
