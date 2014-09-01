@@ -12,23 +12,22 @@ mixin page(title)
 
 			include scripts
 
-mixin methodology-menu()
-	li
-		a(href="methodology-importance") Introduction
-	li
-		a(href="methodology-isa") ISA requirements
-	li
-		a(href="methodology-recommendations") FRC recommendations
-	li
-		a(href="methodology-solution") How Audition helps
-			
-mixin methodology-page(title)
+mixin methodology-menu(selected)
+	for page in [{name: 'Introduction', link:'methodology-importance', id: 'introduction'}, {name: 'ISA requirements', link:'methodology-isa', id: 'isa'},{name: 'How Audition helps', link:'methodology-solution', id: 'solution'},{name: 'FRC recommendations', link:'methodology-recommendations', id: 'frc'}]
+		if(selected === page.id)
+			li.active			
+				a(href=page.link) #{page.name}
+		else
+			li
+				a(href=page.link) #{page.name}
+
+mixin methodology-page(title, id)
 	+page(title)
 		.container
 			.row.vertical-space
 				.col-sm-4
 					ul.nav.nav-pills.nav-stacked
-						+methodology-menu()
+						+methodology-menu(id)
 				.col-sm-6				
 					block
 
