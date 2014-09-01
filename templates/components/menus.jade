@@ -1,12 +1,12 @@
 mixin methodology-menu(selected)
 	for page in [{name: 'Introduction', link:'methodology-importance', id: 'introduction'}, {name: 'ISA requirements', link:'methodology-isa', id: 'isa'},{name: 'FRC recommendations', link:'methodology-recommendations', id: 'frc'},{name: 'How Audition helps', link:'methodology-solution', id: 'solution'}]
 		if(selected === page.id)
-			li.active			
+			li.active
 				a(href=page.link) #{page.name}
 		else
 			li
 				a(href=page.link) #{page.name}
-				
+
 mixin main-menu()
 	li
 		a(href="/") Home
