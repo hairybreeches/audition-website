@@ -12,3 +12,23 @@ mixin page(title)
 
 			include scripts
 
+mixin methodology-menu()
+	li
+		a(href="methodology-importance") Introduction
+	li
+		a(href="methodology-isa") ISA requirements
+	li
+		a(href="methodology-recommendations") FRC recommendations
+	li
+		a(href="methodology-solution") How Audition helps
+			
+mixin methodology-page(title)
+	+page(title)
+		.container
+			.row.vertical-space
+				.col-sm-4
+					ul.nav.nav-pills.nav-stacked
+						+methodology-menu()
+				.col-sm-6				
+					block
+
