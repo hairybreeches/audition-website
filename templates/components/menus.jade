@@ -14,14 +14,7 @@ mixin main-menu()
 		a.dropdown-toggle(data-toggle="dropdown" href="#") Methodology
 			b.caret
 		ul.dropdown-menu
-			li
-				a(href="methodology-importance") Introduction
-			li
-				a(href="methodology-isa") ISA requirements
-			li
-				a(href="methodology-recommendations") FRC recommendations							
-			li
-				a(href="methodology-solution") How Audition helps
+			+methodology-menu()
 	li
 		a(href="/product") Product
 	li
