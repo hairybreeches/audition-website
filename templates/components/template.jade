@@ -1,9 +1,10 @@
 include menus
-mixin page(title)
+include head
+
+mixin page(title, description)
 	doctype html
 	html(lang="en")
-		include head
-		+head(title)
+		+head(title, description)
 		body
 			include navbar
 
@@ -13,8 +14,8 @@ mixin page(title)
 
 			include scripts
 
-mixin methodology-page(title, id)
-	+page(title)
+mixin methodology-page(title, description, id)
+	+page(title, description)
 		.container
 			.row.vertical-space
 				.col-sm-4
