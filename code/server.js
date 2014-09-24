@@ -1,4 +1,5 @@
 var express = require('express'),
+		fs = require('fs');
 		path = require('path');
 var app = express();
 
@@ -12,8 +13,12 @@ app.get('/', function(req,res) {
 
 //very dirty way to make sure we serve .html files on their route
 app.use(function(req, res, next) {
-	if (req.path.indexOf('.') === -1) {			
-     req.url += '.html';	
+	if (req.path.indexOf('.') === -1) {
+		var file = publicdir + req.path + '.html';
+    fs.exists(file, function(exists) {
+      if (exists){
+        req.url += '.html';     
+			}
    }    
    next();
 });
