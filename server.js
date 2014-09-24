@@ -3,6 +3,7 @@ var express = require('express'),
 var app = express();
 
 var servePath = path.resolve('./static');
+var port = process.env.PORT || 1337;
 
 //serve index.html on the root
 app.get('/', function(req,res) {
@@ -18,4 +19,4 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static(servePath));
-app.listen(1337);
+app.listen(port);
