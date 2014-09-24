@@ -5,19 +5,24 @@ var gulp = require('gulp'),
     jade = require('gulp-jade'),
     less = require('gulp-less'),
     path = require('path'),
-		yargs = require('yargs'),
-		express = require('express'),		
-		app = express();	
+		yargs = require('yargs');
 		
 		
 var args   = yargs.argv;
 
 var targetDir = args.target || '../build';
 
+gulp.task('code', function () {
+    return gulp.src('code/*')
+      .pipe(gulp.dest(targetDir));
+});
+
+var staticDir = targetDir + '/static'
+
 gulp.task('templates', function() {
   return gulp.src('./templates/pages/*.jade')
       .pipe(jade({ pretty: true }))
-      .pipe(gulp.dest(targetDir));
+      .pipe(gulp.dest(staticDir));
 });
 
 gulp.task('less', function () {
@@ -25,39 +30,20 @@ gulp.task('less', function () {
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
-    .pipe(gulp.dest(targetDir));
+    .pipe(gulp.dest(staticDir));
 });
 
 gulp.task('content', function () {
     return gulp.src('content/*')
-      .pipe(gulp.dest(targetDir));
+      .pipe(gulp.dest(staticDir));
 });
 
 gulp.task('watch', function () {
   gulp.watch('./style/**/*.less', ['less']);  
   gulp.watch('./templates/**/*.jade', ['templates']);
   gulp.watch('content/*', ['content']);
-});
-
-gulp.task('serve', function() {
-	var servePath = path.resolve(targetDir);
-	//serve index.html on the root
-	app.get('/', function(req,res) {
-		res.sendFile(servePath + '/index.html');		
-	});
-	
-	//very dirty way to make sure we serve .html files on their route
-	app.use(function(req, res, next) {
-		if (req.path.indexOf('.') === -1) {			
-      req.url += '.html';	
-    }    
-    next();
-	});
-	
-  app.use(express.static(servePath));
-	gutil.log('serving directory: ' + servePath);	
-  app.listen(1337);
+  gulp.watch('code/*', ['code']);
 });
 
 // Default Task
-gulp.task('default', ['templates', 'less', 'content', 'serve', 'watch']);
+gulp.task('default', ['code', 'templates', 'less', 'content', 'watch']);
