@@ -18,7 +18,7 @@ app.get('/', function(req,res) {
 });
 
 //mailing list signup
-app.post('/demo-request', function(req, res){
+app.post('/trial-request', function(req, res){
 	mailchimp.lists.subscribe({
 	id: 'b9144c63ee',
 	double_optin: false,
