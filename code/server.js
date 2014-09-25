@@ -23,8 +23,13 @@ var subscribe = function(email){
 			double_optin: false,
 			email: {
 				email: email
-			}
-		});
+			},			
+		}, 
+		function(){}, 
+		function(error){
+				console.log('error signing up ' + email);
+				console.log(error);
+			});
 }
 
 var postSubscribe = function(body){
