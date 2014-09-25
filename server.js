@@ -1,6 +1,13 @@
 var express = require('express'),
-		path = require('path');
+		fs = require('fs'),
+		path = require('path'),
+		mcapi = require('./node_modules/mailchimp-api/mailchimp'),
+		bodyParser = require('body-parser');
+		
 var app = express();
+var mailchimp = new mcapi.Mailchimp('8b4f8984d7258cc1bd38e48050f0c009-us8');
+
+app.use( bodyParser.urlencoded() );
 
 var servePath = path.resolve('./static');
 var port = process.env.PORT || 1337;
@@ -10,12 +17,52 @@ app.get('/', function(req,res) {
 	res.sendFile(servePath + '/index.html');		
 });
 
+var subscribe = function(email){
+		mailchimp.lists.subscribe({
+			id: 'b9144c63ee',
+			double_optin: false,
+			email: {
+				email: email
+			},			
+		}, 
+		function(){}, 
+		function(error){
+				console.log('error signing up ' + email);
+				console.log(error);
+			});
+}
+
+var postSubscribe = function(body){
+	//only actually do the signup if the bot-catching field hasn't been filled in
+	if(body.b_cbc366668e12fea772df67aeb_bf820d2720){
+		console.log('ignoring attempted bot signup');
+	}
+	else{
+		subscribe(body.EMAIL);
+	}
+}
+
+//mailing list signup
+app.post('/trial-request', function(req, res){
+	console.log(req.body);
+	postSubscribe(req.body);
+	res.redirect('/trial-request-success');
+})
+
 //very dirty way to make sure we serve .html files on their route
 app.use(function(req, res, next) {
-	if (req.path.indexOf('.') === -1) {			
-     req.url += '.html';	
-   }    
-   next();
+  if (req.path.indexOf('.') === -1) {
+    var file = servePath + req.path + '.html';
+    fs.exists(file, function(exists) {
+      if (exists){
+        req.url += '.html';
+			}
+      next();
+    });
+  }
+  else{
+    next();
+	}
 });
 
 app.use(express.static(servePath));
