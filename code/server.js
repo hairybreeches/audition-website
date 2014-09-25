@@ -19,13 +19,19 @@ app.get('/', function(req,res) {
 
 //mailing list signup
 app.post('/trial-request', function(req, res){
-	mailchimp.lists.subscribe({
-	id: 'b9144c63ee',
-	double_optin: false,
-	email: {
-		email: req.body.EMAIL
+	console.log(req.body);
+	
+	//only actually do the signup if the bot-catching field hasn't been filled in
+	if(!req.body.b_cbc366668e12fea772df67aeb_bf820d2720){
+		mailchimp.lists.subscribe({
+		id: 'b9144c63ee',
+		double_optin: false,
+		email: {
+			email: req.body.EMAIL
+		}
+		});
 	}
-	});
+	
 	res.redirect('/trial-request-success');
 })
 
