@@ -26,7 +26,7 @@ app.post('/demo-request', function(req, res){
 		email: req.body.EMAIL
 	}
 	});
-	res.send('');
+	res.redirect('/trial-request-success');
 })
 
 //very dirty way to make sure we serve .html files on their route
