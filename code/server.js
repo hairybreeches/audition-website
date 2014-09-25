@@ -27,19 +27,20 @@ var subscribe = function(email){
 		});
 }
 
-//mailing list signup
-app.post('/trial-request', function(req, res){
-	console.log(req.body);
-	
+var postSubscribe = function(body){
 	//only actually do the signup if the bot-catching field hasn't been filled in
-	if(req.body.b_cbc366668e12fea772df67aeb_bf820d2720){
+	if(body.b_cbc366668e12fea772df67aeb_bf820d2720){
 		console.log('ignoring attempted bot signup');
 	}
 	else{
-		subscribe(req.body.EMAIL);
+		subscribe(body.EMAIL);
 	}
-	
-	
+}
+
+//mailing list signup
+app.post('/trial-request', function(req, res){
+	console.log(req.body);
+	postSubscribe(req.body);
 	res.redirect('/trial-request-success');
 })
 
