@@ -1,8 +1,11 @@
 include ../components/template
+include ../components/footnotes
 
 +methodology-page('ISA 240', 'A summary of what ISA 240 has to say about sampling journals during a statutory/external audit', 'isa')
 	h1 What does the ISA say?
-	p.content ISA 240 requires the auditor to "Test the appropriateness of journal entries recorded in the general ledger". It states that "the auditor’s assessment of the risks of material misstatement due to fraud may assist the auditor to identify specific classes of journal entries and other adjustments for testing", and suggests the following as examples of the characteristics of fraudulent journals:
+	p.content ISA 240 requires the auditor to "Test the appropriateness of journal entries recorded in the general ledger"
+		+footnote-link(1)
+		|. It states that "the auditor’s assessment of the risks of material misstatement due to fraud may assist the auditor to identify specific classes of journal entries and other adjustments for testing", and suggests the following as examples of the characteristics of fraudulent journals:
 		ul.content
 			li made to unrelated, unusual, or seldom-used accounts,
 			li made by individuals who typically do not make journal entries,
@@ -11,3 +14,7 @@ include ../components/template
 			li containing round numbers or consistent ending numbers
 	p.content Of course, this is a wide variety of sampling methods for an auditor to choose from. Most auditors therefore choose to keep things simple: to choose a sample of journals posted outside of normal working hours and round number amounts. However, the regulator would rather that auditors used more varied sampling methods, as they 
 		a(href="methodology-recommendations") stated earlier this year
+	hr.vertical-space
+	+footnote(1)
+		| You can read the entire text of ISA 240 here: 
+		a(href="http://www.ifac.org/sites/default/files/downloads/a012-2010-iaasb-handbook-isa-240.pdf") http://www.ifac.org/sites/default/files/downloads/a012-2010-iaasb-handbook-isa-240.pdf
