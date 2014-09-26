@@ -1,0 +1,8 @@
+mixin footnote-link(number)
+	sup
+		a(href="#footnote" + number) [#{number}]
+		
+mixin footnote(number)
+	small.vertical-space(id="footnote" + number)
+				sup [#{number}] 
+				block
